@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>404 – Diese Tür führt ins Leere | The Creaking Door</title>
+<meta name="robots" content="noindex">
+<!-- Absolute Pfade: GitHub Pages liefert diese Seite auch für tief
+     verschachtelte URLs aus, relative Pfade würden dort ins Leere laufen.
+     Bei einem Umzug auf eine eigene Domain "/tcd-website" entfernen. -->
+<link rel="icon" href="/tcd-website/assets/img/tcd-logo.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Archivo:wght@400;500;700&family=Permanent+Marker&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/tcd-website/css/base.css">
+<link rel="stylesheet" href="/tcd-website/css/sections.css">
+<style>
+/* Sonderstyles nur für die 404-Seite */
+.notfound{
+  min-height:100svh;
+  display:flex;flex-direction:column;align-items:center;justify-content:center;
+  text-align:center;
+  padding:40px 6vw;
+}
+.notfound__code{
+  font-family:var(--display);
+  font-size:clamp(4rem,14vw,9rem);
+  line-height:1;
+  text-transform:uppercase;
+  filter:drop-shadow(5px 5px 0 var(--purple-deep));
+  transform:rotate(-1.5deg);
+}
+.notfound h1{
+  font-family:var(--marker);
+  font-size:clamp(1.2rem,3.4vw,1.9rem);
+  color:var(--purple-hot);
+  transform:rotate(-1deg);
+  margin-top:10px;
+}
+.notfound .outro__door{margin-top:26px}
+.notfound .btn{margin-top:38px}
+</style>
+</head>
+<body class="room">
+
+<div class="grain" aria-hidden="true"></div>
+
+<main class="notfound">
+  <p class="notfound__code">404</p>
+  <h1>Diese Tür führt ins Leere …</h1>
+  <img class="outro__door" src="/tcd-website/assets/img/tuer-offen.png" alt="Handgezeichnete offene Tür, aus der Creaki – das Bandmaskottchen – hervorlugt">
+  <a class="btn" href="/tcd-website/">Zurück in den Proberaum</a>
+</main>
+
+</body>
+</html>

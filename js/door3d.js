@@ -188,10 +188,14 @@ TCD.initDoorScene = function(){
   const overlayEl = document.getElementById('doorOverlay');
   const hintEl = document.getElementById('doorHint');
   const clock3 = new THREE.Clock();
+  let lastP = -1; // zuletzt gerenderter Fortschritt: jede p-Änderung (z. B. der
+                  // onRefresh-Sync nach einem Reload) wird noch einmal gerendert,
+                  // damit Overlay-Opacity/-Visibility sicher gesetzt sind
   (function loop(){
     requestAnimationFrame(loop);
     const t = clock3.elapsedTime; clock3.getDelta();
-    if(!doorScene.active && (doorScene.p <= 0 || doorScene.p >= 1)) return; // pausiert außerhalb
+    if(!doorScene.active && doorScene.p === lastP && (doorScene.p <= 0 || doorScene.p >= 1)) return; // pausiert außerhalb
+    lastP = doorScene.p;
     const p = doorScene.p;
     /* Türphase 0–60 % des Akts */
     const dPh = Math.min(p / .6, 1);

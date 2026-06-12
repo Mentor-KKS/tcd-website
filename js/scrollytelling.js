@@ -47,7 +47,19 @@
           if(self.progress > .42) heroTl.play(); else heroTl.reverse();
           document.body.classList.toggle('entered', self.progress > .94);
         },
-        onToggle(self){ if(doorScene) doorScene.active = self.isActive; }
+        onToggle(self){ if(doorScene) doorScene.active = self.isActive; },
+        /* Beim (Neu-)Laden mitten auf der Seite stellt ScrollTrigger den
+           Scrub-Tween ohne Callbacks wieder her – onUpdate feuert nicht und
+           das Tür-Overlay bliebe geschlossen stehen. Hier den kompletten
+           Zustand einmalig auf den Scroll-Fortschritt syncen: */
+        onRefresh(self){
+          if(doorScene){ doorScene.p = self.progress; doorScene.active = self.isActive; }
+          const wp = Math.max(0, Math.min((self.progress - .45) / .55, 1));
+          const e = wp < .5 ? 2 * wp * wp : 1 - Math.pow(-2 * wp + 2, 2) / 2;
+          gsap.set('#welcomeInner', { scale: .45 + .55 * e });
+          heroTl.progress(self.progress > .42 ? 1 : 0);
+          document.body.classList.toggle('entered', self.progress > .94);
+        }
       },
       onUpdate(){ if(doorScene) doorScene.p = doorProxy.p; }
     });

@@ -511,12 +511,7 @@
 .form__consent input{width:auto;margin-top:4px;accent-color:var(--purple-deep)}
 .form button{justify-self:start}
 
-/* Outro: offene Tür mit Creaki */
-.outro{
-  padding-top:90px;padding-bottom:30px;
-  text-align:center;
-  background:var(--black);
-}
+/* Offene Tür mit Creaki – genutzt auf der 404-Seite */
 .outro__door{
   width:min(760px,92%);
   margin:0 auto;
