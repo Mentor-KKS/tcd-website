@@ -6,10 +6,16 @@
   display:flex;align-items:center;justify-content:space-between;
   padding:12px 22px;
   background:rgba(7,6,8,.86);
-  backdrop-filter:blur(8px);
   border-bottom:2px solid var(--white);
   transform:translateY(-115%);
   transition:transform .5s ease;
+}
+/* Blur liegt auf einem Pseudoelement: backdrop-filter direkt auf .nav würde
+   die Leiste zum Containing Block machen und das fixe Mobilmenü einsperren */
+.nav::before{
+  content:"";position:absolute;inset:0;z-index:-1;
+  -webkit-backdrop-filter:blur(8px);
+  backdrop-filter:blur(8px);
 }
 body.entered .nav{transform:none}
 .nav__logo{
