@@ -1,0 +1,109 @@
+/* ============================================================
+   BASE: Variablen, Reset, globale Elemente, Filmkorn, Progress
+   ============================================================ */
+:root{
+  --black:#070608;
+  --room:#0d0b10;
+  --wall:#141118;
+  --paper:#f1ede6;
+  --white:#f4f2ee;
+  --purple:#b478c8;
+  --purple-hot:#cf8ee6;
+  --purple-deep:#5e3a73;
+  --wood:#2a2026;
+  --wood-dark:#1c151a;
+  --grey:#8a8a8a;
+  --line:rgba(244,242,238,.14);
+  --display:'Anton',sans-serif;
+  --marker:'Permanent Marker',cursive;
+  --body:'Archivo',sans-serif;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+body{
+  background:var(--room);
+  color:var(--white);
+  font-family:var(--body);
+  font-size:17px;line-height:1.6;
+  overflow-x:hidden;
+}
+img{max-width:100%;display:block}
+a{color:inherit}
+button{font-family:inherit}
+::selection{background:var(--purple);color:var(--black)}
+:focus-visible{outline:3px solid var(--purple);outline-offset:3px}
+
+/* Filmkorn */
+.grain{
+  position:fixed;inset:-100px;z-index:90;pointer-events:none;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.5'/%3E%3C/svg%3E");
+  opacity:.09;mix-blend-mode:overlay;
+  animation:grain 1.2s steps(6) infinite;
+}
+@keyframes grain{
+  0%{transform:translate(0,0)}20%{transform:translate(-40px,30px)}
+  40%{transform:translate(30px,-50px)}60%{transform:translate(-30px,-20px)}
+  80%{transform:translate(50px,40px)}100%{transform:translate(0,0)}
+}
+
+/* Scroll-Fortschritt = Lichtspalt oben */
+.progress{
+  position:fixed;top:0;left:0;right:0;height:4px;z-index:120;
+  background:rgba(244,242,238,.07);
+}
+.progress__bar{
+  height:100%;width:100%;
+  background:linear-gradient(90deg,var(--purple-deep),var(--purple-hot));
+  box-shadow:0 0 14px var(--purple-hot);
+  transform:scaleX(0);transform-origin:left;
+}
+
+/* Buttons */
+.btn{
+  display:inline-block;cursor:pointer;border:0;
+  font-family:var(--display);
+  font-size:1.05rem;letter-spacing:.08em;text-transform:uppercase;
+  text-decoration:none;
+  padding:16px 32px;
+  background:var(--white);color:var(--black);
+  box-shadow:5px 5px 0 var(--purple);
+  transform:rotate(-1.5deg);
+  transition:transform .15s,box-shadow .15s,background .15s;
+}
+.btn:hover{transform:rotate(0) translate(-2px,-2px);box-shadow:8px 8px 0 var(--purple);background:var(--purple-hot)}
+.btn--alt{
+  background:transparent;color:var(--white);
+  border:2px solid var(--white);
+  box-shadow:5px 5px 0 var(--purple-deep);
+  transform:rotate(1.2deg);
+}
+.btn--alt:hover{background:var(--white);color:var(--black)}
+
+/* Der Raum + Sektions-Grundgerüst */
+.room{
+  background:
+    repeating-linear-gradient(0deg, rgba(255,255,255,.014) 0 2px, transparent 2px 46px),
+    repeating-linear-gradient(90deg, rgba(255,255,255,.01) 0 2px, transparent 2px 110px),
+    radial-gradient(ellipse 90% 60% at 70% 0%, rgba(180,120,200,.06), transparent 55%),
+    var(--room);
+}
+section{
+  padding:120px max(6vw, calc((100% - 1360px) / 2));
+  position:relative;overflow:hidden;
+}
+.sec-head{margin-bottom:64px}
+.sec-head .where{
+  display:flex;align-items:center;gap:10px;
+  font-family:var(--display);
+  font-size:.74rem;letter-spacing:.3em;text-transform:uppercase;
+  color:var(--purple-hot);
+  margin-bottom:12px;
+}
+.sec-head .where::before{content:"→";display:inline-block;animation:nudge 2.2s ease-in-out infinite}
+@keyframes nudge{0%,100%{transform:translateX(0)}50%{transform:translateX(6px)}}
+.sec-head h2{
+  font-family:var(--display);
+  font-size:clamp(2.8rem,8vw,6.2rem);
+  text-transform:uppercase;line-height:.95;
+  transform:rotate(-1.2deg);display:inline-block;width:fit-content;
+  filter:drop-shadow(5px 5px 0 var(--purple-deep));
+}

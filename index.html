@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Creaking Door – Can you hear it?</title>
+<meta name="description" content="The Creaking Door (TCD) – harter Pop-Rock aus Bonn. Scroll dich durch unsere Tür in den Proberaum.">
+<link rel="icon" href="assets/img/tcd-logo.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Archivo:wght@400;500;700&family=Permanent+Marker&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/base.css">
+<link rel="stylesheet" href="css/navigation.css">
+<link rel="stylesheet" href="css/door.css">
+<link rel="stylesheet" href="css/sections.css">
+<link rel="stylesheet" href="css/reduced-motion.css">
+</head>
+<body>
+
+<div class="grain" aria-hidden="true"></div>
+<div class="progress" aria-hidden="true"><div class="progress__bar" id="progressBar"></div></div>
+
+<header class="nav">
+  <a href="#home" class="nav__logo">TCD<span class="slit" aria-hidden="true"></span></a>
+  <button class="nav__toggle" aria-label="Menü öffnen" aria-expanded="false">
+    <span></span><span></span><span></span>
+  </button>
+  <ul class="nav__links" id="navLinks">
+    <li><a href="#musik">Musik</a></li>
+    <li><a href="#band">Die Band</a></li>
+    <li><a href="#gigs">Live</a></li>
+    <li><a href="#video">Video</a></li>
+    <li><a href="#galerie">Galerie</a></li>
+    <li><a href="#merch">Merch</a></li>
+    <li><a href="#kontakt">Kontakt</a></li>
+  </ul>
+</header>
+
+<!-- ===== AKT 1: DIE TÜR (transparentes Overlay – durch die Öffnung sieht man die Hero) ===== -->
+<div class="doorOverlay" id="doorOverlay" aria-hidden="true">
+  <div class="doorAct__stage" id="doorStage">
+    <div id="doorCanvas"></div>
+    <div class="doorAct__vignette" aria-hidden="true"></div>
+    <p class="doorAct__hint" id="doorHint">Scroll, um die Tür zu öffnen</p>
+  </div>
+  <button class="doorAct__sound" id="soundToggle" aria-pressed="false">Sound: aus</button>
+</div>
+
+<main class="room">
+
+  <!-- Willkommen -->
+  <section class="welcome" id="home">
+    <div class="welcome__inner" id="welcomeInner">
+    <h1>
+      <span class="small" data-reveal>Willkommen im Proberaum von</span>
+      <span class="big" data-reveal>The Creaking Door</span>
+    </h1>
+    <p class="welcome__sub" data-reveal>harter Pop-Rock · alle Songs selbst geschrieben</p>
+    <p class="welcome__loc" data-reveal>Bonn-Beuel · seit 2021</p>
+    <div class="welcome__cta" data-reveal>
+      <a class="btn" href="https://open.spotify.com/intl-de/artist/5ryl7oNMwAsvF3ERWNa0vG" target="_blank" rel="noopener">Jetzt reinhören</a>
+      <a class="btn btn--alt" href="#musik">Schau dich um ↓</a>
+    </div>
+    </div>
+  </section>
+
+  <div class="marquee" aria-hidden="true">
+    <div class="marquee__track">
+      <span>★ Can you hear it?</span><span>★ Harter Pop-Rock</span><span>★ Debütalbum in Arbeit</span><span>★ Live aus Bonn-Beuel</span><span>★ Alle Songs selbst geschrieben</span>
+      <span>★ Can you hear it?</span><span>★ Harter Pop-Rock</span><span>★ Debütalbum in Arbeit</span><span>★ Live aus Bonn-Beuel</span><span>★ Alle Songs selbst geschrieben</span>
+    </div>
+  </div>
+
+  <!-- Musik -->
+  <section class="music" id="musik">
+    <div class="sec-head" data-reveal>
+      <span class="where">An der Anlage – Ton ist schon aufgedreht</span>
+      <h2>Unsere Musik</h2>
+    </div>
+    <div class="amp" data-reveal id="amp">
+      <div class="amp__top">
+        <span class="amp__brand">TCD · Vollröhre</span>
+        <span class="amp__knobs" aria-hidden="true"><span class="knob"></span><span class="knob"></span><span class="knob"></span><span class="amp__led"></span></span>
+      </div>
+      <div class="amp__grille">
+        <iframe src="https://open.spotify.com/embed/artist/5ryl7oNMwAsvF3ERWNa0vG?utm_source=generator&theme=0" title="The Creaking Door auf Spotify" loading="lazy" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"></iframe>
+      </div>
+    </div>
+    <p class="music__hint" data-reveal>alle Songs selbst geschrieben – Debütalbum in Arbeit</p>
+  </section>
+
+  <!-- Band: Polaroids fliegen an die Wand -->
+  <section id="band">
+    <div class="sec-head" data-reveal>
+      <span class="where">An der Wand</span>
+      <h2>Die Band</h2>
+    </div>
+    <div class="band__grid" id="bandGrid">
+      <article class="polaroid">
+        <div class="polaroid__img">
+          <img src="assets/img/jojo.jpg" alt="Jojo – Leadsängerin" loading="lazy">
+        </div>
+        <h3 class="polaroid__name">Jojo</h3>
+        <p class="polaroid__role">Leadgesang</p>
+        <p class="polaroid__bio">Vollblutrockerin mit früher Bühnenerfahrung – heizt am Mikro ordentlich ein, bringt selbstgebackenen Kuchen zur Probe mit und rockt nebenbei unsere Socials.</p>
+      </article>
+      <article class="polaroid">
+        <div class="polaroid__img">
+          <img src="assets/img/grischa.jpg" alt="Grischa – Gitarrist" loading="lazy">
+        </div>
+        <h3 class="polaroid__name">Grischa</h3>
+        <p class="polaroid__role">Gitarre</p>
+        <p class="polaroid__bio">Gründungsmitglied, kennt Jan seit der Grundschule. Fährt das Bandmobil, malt die Bilder für unser Merch – und liefert die Riffs, die unsere Songs tragen.</p>
+      </article>
+      <article class="polaroid">
+        <div class="polaroid__img">
+          <img src="assets/img/susi.png" alt="Susi – Bassistin" loading="lazy">
+        </div>
+        <h3 class="polaroid__name">Susi</h3>
+        <p class="polaroid__role">Bass &amp; Backing Vocals</p>
+        <p class="polaroid__bio">Musikalisch seit Kindertagen, Kopf hinter einem Großteil der Songs. Als Dr. Psych sorgt sie für den Tiefgang in den Texten – Backing Vocals inklusive.</p>
+      </article>
+      <article class="polaroid">
+        <div class="polaroid__img">
+          <img src="assets/img/jan.jpg" alt="Jan – Drummer" loading="lazy">
+        </div>
+        <h3 class="polaroid__name">Jan</h3>
+        <p class="polaroid__role">Drums</p>
+        <p class="polaroid__bio">Takt- und Ideengeber, Mit-Initiator der Band. Wollte es mit Grischa musikalisch noch mal versuchen – nachdem Anlauf eins in Kindheitstagen grandios gescheitert war.</p>
+      </article>
+    </div>
+  </section>
+
+  <!-- Story -->
+  <section id="story">
+    <div class="sec-head" data-reveal>
+      <span class="where">Auf dem Regal: eine alte Aufnahme</span>
+      <h2>Unsere Story</h2>
+    </div>
+    <div class="story__wrap">
+      <div class="story__text">
+        <p data-reveal>Auf Jans Bestreben hin unternahmen er, Susi und Grischa 2021 erste musikalische Gehversuche – mit ihrem bis dato einzigen Song <span class="hl">„Follow“</span>. Susi musste sich entscheiden: Bass oder Leadgesang. Also suchten die Drei Verstärkung – und fanden Jojo. Aus Drei wurden Vier, und The Creaking Door war geboren.</p>
+        <p data-reveal>Der Name? Wie könnte es anders sein: die <span class="hl">immerzu quietschende Tür</span> unseres ersten Proberaums – ein stundenweise mietbarer Gemeinschaftsraum. Viel Fahrerei in Grischas altem Volvo, Equipment pro Probe auf- und wieder abbauen. Nicht gerade die besten Voraussetzungen für wöchentliche Sessions.</p>
+        <p data-reveal>Das Einzige, was wir mitgenommen haben: eine <span class="hl">20-sekündige Aufnahme des markanten Knarrzens</span>, mit dem uns die Tür jedes Mal begrüßt hat. Sie liegt hier rechts auf dem Regal – drück ruhig auf Play.</p>
+        <p data-reveal>Heute teilen wir uns einen voll ausgestatteten Proberaum (inkl. Kühlschrank!) in Bonn-Beuel mit einer befreundeten Band. Von hier aus erobern wir Stück für Stück mehr Bühnen – und arbeiten an unserem <span class="hl">Debütalbum</span>.</p>
+      </div>
+      <aside class="tape" id="tape" data-reveal>
+        <div class="tape__label">
+          Türknarzen, Original
+          <small>Proberaum Nr. 1 · 20 Sek. · 2021</small>
+        </div>
+        <div class="tape__window" aria-hidden="true">
+          <span class="reel"></span>
+          <span class="tape__band"></span>
+          <span class="reel reel--r"></span>
+        </div>
+        <button class="tape__btn" id="tapePlay">▶ Play</button>
+        <p class="tape__note">Tipp: Legt eure echte Aufnahme als <strong>assets/audio/tuerknarzen.mp3</strong> ins Projekt – dann spielt der Rekorder das Original. Solange erzeugt er ein Ersatz-Knarzen.</p>
+      </aside>
+    </div>
+  </section>
+
+  <!-- Live: Plakat klatscht an die Wand -->
+  <section class="gigs" id="gigs">
+    <div class="sec-head" data-reveal>
+      <span class="where">Frisch an die Wand plakatiert</span>
+      <h2>Live</h2>
+    </div>
+    <div class="poster" id="poster">
+      <p class="poster__kicker">The Creaking Door · Live</p>
+      <h3>On <span class="out">Tour</span></h3>
+      <p class="poster__sub">na ja … fast. Helft uns, das Plakat zu füllen!</p>
+      <!--
+      <div class="gig">
+        <span class="date">15.08.26</span>
+        <span class="venue">Harmonie Bonn <small>Support: tba</small></span>
+        <a href="https://ticket-link.de" target="_blank" rel="noopener">Tickets</a>
+      </div>
+      -->
+      <div class="gig gig--ghost" aria-hidden="true">
+        <span class="date">__.__.26</span>
+        <span class="venue">Deine Stadt <small>dein Lieblingsclub</small></span>
+        <span></span>
+      </div>
+      <div class="gig gig--ghost" aria-hidden="true">
+        <span class="date">__.__.26</span>
+        <span class="venue">Dein Festival <small>wir bringen die Tür mit</small></span>
+        <span></span>
+      </div>
+      <div class="gig gig--ghost" aria-hidden="true">
+        <span class="date">__.__.26</span>
+        <span class="venue">Dein Event <small>Geburtstag? Firmenfeier? Kneipe?</small></span>
+        <span></span>
+      </div>
+      <p class="poster__cta"><a class="btn" href="#kontakt">Bucht uns</a></p>
+      <p class="poster__foot">Harter Pop-Rock · direkt aus dem Proberaum Bonn-Beuel</p>
+    </div>
+  </section>
+
+  <!-- News -->
+  <section class="news" id="news">
+    <div class="sec-head" data-reveal>
+      <span class="where">An der Pinnwand</span>
+      <h2>News</h2>
+    </div>
+    <div class="news__grid" id="newsGrid">
+      <article class="flyer">
+        <span class="flyer__date">In Arbeit</span>
+        <h3>Debütalbum</h3>
+        <p>Alle Songs selbst geschrieben – wir freuen uns, euch bald unser erstes Album präsentieren zu können. Bleibt dran!</p>
+      </article>
+      <article class="flyer">
+        <span class="flyer__date">Live</span>
+        <h3>Nächste Gigs</h3>
+        <p>Wir arbeiten daran, mehr Bühnen zu erobern. Termine kündigen wir auf Instagram und TikTok an – folgt uns!</p>
+      </article>
+      <article class="flyer">
+        <span class="flyer__date">Support</span>
+        <h3>Patreon</h3>
+        <p>Unterstützt uns auf Patreon, sichert euch Merch und exklusive Einblicke in den Proberaum.</p>
+      </article>
+    </div>
+  </section>
+
+  <!-- Video -->
+  <section id="video">
+    <div class="sec-head" data-reveal>
+      <span class="where">In der Ecke flimmert der alte Fernseher</span>
+      <h2>Video</h2>
+    </div>
+    <div class="tv" id="tvEl">
+      <div class="tv__body">
+        <div class="tv__screen">
+          <!-- VIDEO_ID durch eure YouTube-ID ersetzen -->
+          <iframe src="https://www.youtube-nocookie.com/embed/VIDEO_ID" title="The Creaking Door – Video" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen loading="lazy"></iframe>
+          <div class="tv__on" id="tvOn" aria-hidden="true"></div>
+        </div>
+        <div class="tv__panel">
+          <span class="tv__brand">TCD-Vision</span>
+          <span class="tv__onair">On Air</span>
+          <span class="tv__knobs" aria-hidden="true"><span></span><span></span></span>
+        </div>
+      </div>
+      <div class="tv__legs" aria-hidden="true"><span></span><span></span></div>
+    </div>
+    <p class="video__hint" data-reveal>↑ in der Datei VIDEO_ID durch eure YouTube-ID ersetzen</p>
+  </section>
+
+  <!-- Galerie: horizontale Fotowand -->
+  <section class="gallery" id="galerie">
+    <div class="sec-head" data-reveal>
+      <span class="where">Die Fotowand wächst mit jedem Gig – seitwärts!</span>
+      <h2>Galerie</h2>
+    </div>
+    <div class="gallery__pin" id="galleryPin">
+      <div class="gallery__track" id="galleryTrack">
+        <figure class="frame"><div class="frame__ph">Euer erstes Live-Foto hier</div><figcaption class="frame__cap">Live @ …</figcaption></figure>
+        <figure class="frame"><div class="frame__ph">Proberaum-Session</div><figcaption class="frame__cap">Bonn-Beuel, Probe</figcaption></figure>
+        <figure class="frame"><div class="frame__ph">Backstage-Moment</div><figcaption class="frame__cap">Backstage</figcaption></figure>
+        <figure class="frame"><div class="frame__ph">Jojos Kuchen!</div><figcaption class="frame__cap">Wichtigstes Bandritual</figcaption></figure>
+        <figure class="frame"><div class="frame__ph">Studio / Recording</div><figcaption class="frame__cap">Albumaufnahmen</figcaption></figure>
+        <figure class="frame"><div class="frame__ph">Das Bandmobil</div><figcaption class="frame__cap">Grischas Volvo (in memoriam)</figcaption></figure>
+      </div>
+    </div>
+    <p class="gallery__hint" data-reveal>↑ Platzhalter durch eure Fotos ersetzen – mehr auf Instagram</p>
+  </section>
+
+  <!-- Merch -->
+  <section id="merch">
+    <div class="sec-head" data-reveal>
+      <span class="where">Am legendären Kühlschrank</span>
+      <h2>Merch &amp; Support</h2>
+    </div>
+    <div class="merch__wrap">
+      <div class="fridge" id="fridge">
+        <span class="magnet magnet--1" aria-hidden="true"></span>
+        <span class="magnet magnet--2" aria-hidden="true"></span>
+        <span class="magnet magnet--3" aria-hidden="true"></span>
+        <a class="fridge__photo" href="http://patreon.com/TCDTheCreakingDoor" target="_blank" rel="noopener">
+          <img src="assets/img/merch.jpg" alt="The Creaking Door Merch – von Grischa gemalt" loading="lazy">
+        </a>
+        <p class="fridge__note">Bier kalt stellen!<br>+ Merch auf Patreon checken →</p>
+      </div>
+      <div class="merch__text">
+        <span class="scribble" data-reveal>von Grischa höchstpersönlich gemalt</span>
+        <p data-reveal>Shirts, Kunst und exklusive Einblicke: Auf Patreon findet ihr unseren Merch und könnt uns direkt auf dem Weg zum Debütalbum unterstützen. Jeder Euro fließt in Proberaum, Aufnahmen und die nächsten Gigs.</p>
+        <a class="btn" href="http://patreon.com/TCDTheCreakingDoor" target="_blank" rel="noopener" data-reveal>Zu Patreon</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Kontakt -->
+  <section class="contact" id="kontakt">
+    <div class="sec-head" data-reveal>
+      <span class="where">Das Klemmbrett an der Tür – von innen</span>
+      <h2>Kontakt</h2>
+    </div>
+    <div class="contact__wrap">
+      <div class="contact__intro">
+        <p data-reveal>Fragen zu unserer Musik? Ihr wollt uns für ein Event buchen oder einfach Hallo sagen? Tragt euch ein, bevor ihr geht – wir melden uns so schnell wie möglich.</p>
+        <div class="socials" data-reveal>
+          <a href="https://www.instagram.com/the_creaking_door/" target="_blank" rel="noopener">Instagram</a>
+          <a href="https://www.tiktok.com/@the_creaking_door" target="_blank" rel="noopener">TikTok</a>
+          <a href="https://open.spotify.com/intl-de/artist/5ryl7oNMwAsvF3ERWNa0vG" target="_blank" rel="noopener">Spotify</a>
+          <a href="http://patreon.com/TCDTheCreakingDoor" target="_blank" rel="noopener">Patreon</a>
+        </div>
+        <!-- Newsletter: action durch euren Anbieter ersetzen -->
+        <form class="newsletter" action="#" method="post" data-reveal>
+          <h3>Album-Alarm</h3>
+          <p>Erfahrt als Erste, wann unser Debütalbum erscheint – keine Werbung, nur die wichtigen Momente.</p>
+          <div class="newsletter__row">
+            <input type="email" name="email" placeholder="deine@email.de" aria-label="E-Mail-Adresse für den Newsletter" required>
+            <button type="submit">Eintragen</button>
+          </div>
+        </form>
+      </div>
+      <div class="clipboard" data-reveal>
+        <div class="clipboard__paper">
+          <h3>Trag dich ein:</h3>
+          <!-- Formular: action durch euren Endpoint ersetzen -->
+          <form class="form" action="#" method="post">
+            <div class="form__row">
+              <div>
+                <label for="vorname">Vorname *</label>
+                <input type="text" id="vorname" name="vorname" required autocomplete="given-name">
+              </div>
+              <div>
+                <label for="nachname">Nachname</label>
+                <input type="text" id="nachname" name="nachname" autocomplete="family-name">
+              </div>
+            </div>
+            <div>
+              <label for="email">E-Mail-Adresse *</label>
+              <input type="email" id="email" name="email" required autocomplete="email">
+            </div>
+            <div>
+              <label for="betreff">Betreff *</label>
+              <input type="text" id="betreff" name="betreff" required>
+            </div>
+            <div>
+              <label for="nachricht">Nachricht *</label>
+              <textarea id="nachricht" name="nachricht" required></textarea>
+            </div>
+            <label class="form__consent">
+              <input type="checkbox" required>
+              <span>Ich habe die <a href="https://the-creaking-door.com/datenschutz/">Datenschutzerklärung</a> zur Kenntnis genommen. *</span>
+            </label>
+            <button type="submit" class="btn">Absenden</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <a href="#home" class="nav__logo">TCD<span class="slit" aria-hidden="true"></span></a>
+    <nav>
+      <a href="https://the-creaking-door.com/impressum/">Impressum</a>
+      <a href="https://the-creaking-door.com/datenschutz/">Datenschutz</a>
+    </nav>
+    <span>© 2026 The Creaking Door · Alle Rechte vorbehalten</span>
+  </footer>
+
+</main>
+
+<!-- Bibliotheken (CDN) -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+
+<!-- Eigene Skripte (Reihenfolge wichtig) -->
+<script src="js/audio.js"></script>
+<script src="js/nav.js"></script>
+<script src="js/door3d.js"></script>
+<script src="js/scrollytelling.js"></script>
+</body>
+</html>

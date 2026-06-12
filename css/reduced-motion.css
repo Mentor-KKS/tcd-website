@@ -1,0 +1,11 @@
+/* ============================================================
+   REDUCED MOTION – muss als LETZTE CSS-Datei geladen werden,
+   damit die Overrides greifen
+   ============================================================ */
+@media(prefers-reduced-motion:reduce){
+  *,*::before,*::after{animation:none!important;transition:none!important}
+  .grain{display:none}
+  .doorOverlay{display:none}
+  .nav{transform:none}
+  .gallery__track{overflow-x:auto;width:auto;max-width:100%}
+}
