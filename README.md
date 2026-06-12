@@ -54,8 +54,6 @@ Die Skripte teilen sich den globalen Namespace `window.TCD` und müssen in der R
 
 - **Türknarzen:** Die echte Aufnahme als `assets/audio/tuerknarzen.mp3` ablegen.
   Fehlt die Datei, erzeugt `js/audio.js` automatisch ein synthetisches Knarzen.
-- **Video:** In `index.html` den Platzhalter `VIDEO_ID` im YouTube-iframe durch die
-  echte Video-ID ersetzen.
 - **Galerie:** Die Platzhalter-Frames in der Galerie-Sektion durch echte Fotos ersetzen.
 - **Formulare:** `action="#"` beim Kontaktformular und Newsletter durch einen echten
   Endpoint ersetzen (z. B. Formspree, Web3Forms o. Ä. – GitHub Pages kann keine Formulare

@@ -114,7 +114,7 @@
       duration: .7, ease: 'back.out(1.4)',
       scrollTrigger: { trigger: '#newsGrid', start: 'top 80%' }
     });
-    gsap.set('#newsGrid .flyer', { rotation: (i) => [-1.6, 1.2, -.8][i] });
+    gsap.set('#newsGrid .flyer', { rotation: (i) => [-1.6, 1.2, -.8, 1.4][i] });
 
     /* --- TV: fährt rein und schaltet sich ein --- */
     gsap.from('#tvEl', {
