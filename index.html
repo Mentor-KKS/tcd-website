@@ -37,12 +37,13 @@
 </header>
 
 <!-- ===== AKT 1: DIE TÜR (transparentes Overlay – durch die Öffnung sieht man die Hero) ===== -->
-<div class="doorOverlay" id="doorOverlay" aria-hidden="true">
+<div class="doorOverlay" id="doorOverlay">
   <div class="doorAct__stage" id="doorStage">
-    <div id="doorCanvas"></div>
+    <div id="doorCanvas" aria-hidden="true"></div>
     <div class="doorAct__vignette" aria-hidden="true"></div>
     <p class="doorAct__hint" id="doorHint">Scroll, um die Tür zu öffnen</p>
   </div>
+  <button class="doorAct__enter" id="doorEnter" type="button">Eintreten</button>
   <button class="doorAct__sound" id="soundToggle" aria-pressed="false">Sound: aus</button>
 </div>
 
@@ -182,7 +183,7 @@
       <div class="gig">
         <span class="date">04.09.26</span>
         <span class="venue">Rock'n'Rhein</span>
-        <span></span>
+        <a href="https://www.rocknrhein.de/" target="_blank" rel="noopener">Info</a>
       </div>
       <div class="gig gig--ghost" aria-hidden="true">
         <span class="date">__.__.26</span>

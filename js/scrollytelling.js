@@ -25,7 +25,12 @@
 
     /* Scroll steuert den Tür-Fortschritt – die Hero ist dahinter gepinnt */
     const doorProxy = { p: 0 };
-    gsap.to(doorProxy, {
+    const enterBtn = document.getElementById('doorEnter');
+    function fadeEnterBtn(progress){
+      enterBtn.style.opacity = String(Math.max(0, 1 - progress / .08));
+      enterBtn.style.pointerEvents = progress > .06 ? 'none' : 'auto';
+    }
+    const doorTween = gsap.to(doorProxy, {
       p: 1, ease: 'none',
       scrollTrigger: {
         trigger: '.welcome',
@@ -46,6 +51,7 @@
           /* Hero tritt ein, sobald die Tür weit genug offen ist */
           if(self.progress > .42) heroTl.play(); else heroTl.reverse();
           document.body.classList.toggle('entered', self.progress > .94);
+          fadeEnterBtn(self.progress);
         },
         onToggle(self){ if(doorScene) doorScene.active = self.isActive; },
         /* Beim (Neu-)Laden mitten auf der Seite stellt ScrollTrigger den
@@ -59,9 +65,30 @@
           gsap.set('#welcomeInner', { scale: .45 + .55 * e });
           heroTl.progress(self.progress > .42 ? 1 : 0);
           document.body.classList.toggle('entered', self.progress > .94);
+          fadeEnterBtn(self.progress);
         }
       },
       onUpdate(){ if(doorScene) doorScene.p = doorProxy.p; }
+    });
+
+    /* Auto-Eintritt: fährt den Scroll animiert durch den Tür-Akt – für alle,
+       die nicht (gut) scrollen können. Eigene Eingaben brechen die Fahrt ab. */
+    let autoEnter = null;
+    function cancelAutoEnter(){
+      if(autoEnter){ autoEnter.kill(); autoEnter = null; }
+    }
+    ['wheel', 'touchmove', 'keydown'].forEach(ev =>
+      addEventListener(ev, cancelAutoEnter, { passive: true })
+    );
+    enterBtn.addEventListener('click', () => {
+      cancelAutoEnter();
+      const pos = { y: window.scrollY };
+      autoEnter = gsap.to(pos, {
+        y: doorTween.scrollTrigger.end + 2,
+        duration: 3.6, ease: 'power1.inOut',
+        onUpdate: () => window.scrollTo(0, pos.y),
+        onComplete: () => { autoEnter = null; }
+      });
     });
 
     /* --- generische Reveals --- */

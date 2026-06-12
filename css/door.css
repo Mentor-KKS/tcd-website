@@ -26,6 +26,18 @@
   z-index:3;
 }
 @keyframes hintPulse{0%,100%{opacity:.45}50%{opacity:1}}
+.doorAct__enter{
+  position:absolute;bottom:13vh;left:50%;transform:translateX(-50%);
+  z-index:4;pointer-events:auto;
+  font-family:var(--display);
+  font-size:.95rem;letter-spacing:.18em;text-transform:uppercase;
+  background:var(--purple);color:var(--black);
+  border:0;cursor:pointer;
+  padding:13px 28px;
+  box-shadow:4px 4px 0 var(--purple-deep);
+  transition:background .15s,opacity .3s;
+}
+.doorAct__enter:hover{background:var(--purple-hot)}
 .doorAct__sound{
   position:absolute;top:20px;right:22px;z-index:5;
   font-size:.72rem;letter-spacing:.16em;text-transform:uppercase;
